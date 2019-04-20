@@ -2,9 +2,10 @@
 Implement an algorithm to determine if a string has all unique characters.
 '''
 
-
+# Memory: O(1)
+# CPU:    O(n*log(n))
 def main():
-    def is_unique_1(s): # t: O(n*log(n)), m: O(1)
+    def is_unique_1(s):
         for i in range(0,len(s)):
             for j in range(i + 1,len(s)):
                 if s[i] == s[j]:
@@ -12,7 +13,10 @@ def main():
 
         return True
 
-    def is_unique_2(s): # t: O(n), O(n)
+    
+    # Memory: O(n)
+    # CPU:    O(n)
+    def is_unique_2(s):
         d = dict()
         for c in s:
             if c in d:
@@ -21,8 +25,11 @@ def main():
                 d[c] = True
 
         return True
-
-    def is_unique(s): # t: O(n), m: O(1)
+    
+    
+    # Memory: O(1)
+    # CPU:    O(n)
+    def is_unique(s):
         bit_vector = 0
         for c in s:
             i = int(2 ** (ord(c) - 97))
@@ -47,7 +54,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-# n + n-1 + n-2 + n-3 + ... + 2 + 1
-# 1 + 2 + ... + n-2 + n-1 + n
