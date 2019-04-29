@@ -12,7 +12,10 @@ class Node:
 
         return res_list
 
-def list_to_head(l):
+    def __str__(self):
+        return str(self.data) + '->' + str(self.next)
+
+def list_to_linked_list(l):
     head = Node(l[0])
     prev = head
     for i in range(1, len(l)):

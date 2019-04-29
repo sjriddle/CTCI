@@ -1,13 +1,13 @@
 import unittest, sys
 
 from a22 import k_last_element
-from helpers import Node, list_to_head
+from helpers import Node, list_to_linked_list
 
 class Test22(unittest.TestCase):
 
     def test_a1(self):
 
-        head = list_to_head([1, 2, 3, 4, 5, 6])
+        head = list_to_linked_list([1, 2, 3, 4, 5, 6])
 
         result = k_last_element(head, 0)
         self.assertEqual(result.data, 6)
